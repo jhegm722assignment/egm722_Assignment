@@ -85,17 +85,31 @@ def scale_bar(ax, length=20, location=(0.92, 0.95)):
     return ax
 
 
-Outline = gpd.read.file(os.path.abspath('data_files/NI_outline.shp'))
+outline = gpd.read.file(os.path.abspath('data_files/NI_outline.shp'))
 SAC = gpd.read.file(os.path.abspath('data_files/SAC.shp'))
 SPA = gpd.read.file(os.path.abspath('data_files/SPA.shp'))
 Reserves = gpd.read.file(os.path.abspath('data_files/NNR_and_NR_Points.shp'))
 
 ni_utm = ccrs.UTM(29)  # create a Universal Transverse Mercator reference system to transform our data to the UTM Zone that Northern Ireland is part of.
 
-ccrs.CRS(Outline.crs) # create a cartopy CRS representation of the CRS associated with the Outline dataset
+ccrs.CRS(outline.crs) # create a cartopy CRS representation of the CRS associated with the Outline dataset
 
 fig = plt.figure(figsize=(8, 8))  # create a figure of size 8x8 (representing the page size in inches)
 ax = plt.axes(projection=ni_utm)  # create an axes object in the figure, using a UTM projection,
 # where we can actually plot our data.
 
+# first, we just add the outline of Northern Ireland using cartopy's ShapelyFeature
+outline_feature = ShapelyFeature(outline['geometry'], ni_utm, edgecolor='k', facecolor='w')
+ax.add_feature(outline_feature) # add the features we've created to the map.
+
+xmin, ymin, xmax, ymax = outline.total_bounds
+# using the boundary of the shapefile features, zoom the map to our area of interest
+ax.set_extent([xmin-5000, xmax+5000, ymin-5000, ymax+5000], crs=ni_utm)  # because total_bounds
+# gives output as xmin, ymin, xmax, ymax,
+# but set_extent takes xmin, xmax, ymin, ymax, we re-order the coordinates here.
+
+# pick colors, add features to the map
+SAC_colors = ['#003f5c']
+SPA_colors = ['#ffa600']
+Reserves_colors = ['#955196']
 
