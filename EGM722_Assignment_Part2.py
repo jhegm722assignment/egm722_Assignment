@@ -113,3 +113,54 @@ SAC_colors = ['#003f5c']
 SPA_colors = ['#ffa600']
 Reserves_colors = ['#955196']
 
+# here, we're setting the edge color of the SAC layer to be the same as the face color.
+SAC_feat = ShapelyFeature(SAC['geometry'], # first argument is the geometry
+                            ccrs.CRS(SAC.crs), # second argument is the CRS
+                            edgecolor='#003f5c', # set the edgecolor to be #003f5c
+                            facecolor='#003f5c', # set the facecolor to be #003f5c
+                            linewidth=1) # set the outline width to be 1 pt
+ax.add_feature(SAC_feat) # add the collection of features to the map
+
+# here, we're setting the edge color of the SPA layer to be the same as the face color.
+SPA_feat = ShapelyFeature(SPA['geometry'], # first argument is the geometry
+                            ccrs.CRS(SPA.crs), # second argument is the CRS
+                            edgecolor='#ffa600', # set the edgecolor to be #ffa600
+                            facecolor='#ffa600', # set the facecolor to be #ffa600
+                            linewidth=1) # set the outline width to be 1 pt
+ax.add_feature(SPA_feat) # add the collection of features to the map
+
+# here, we're setting the edge color of the Reserves layer to be the same as the face color.
+Reserves_feat = ShapelyFeature(Reserves['geometry'], # first argument is the geometry
+                            ccrs.CRS(Reserves.crs), # second argument is the CRS
+                            edgecolor='#955196', # set the edgecolor to be #955196
+                            facecolor='#955196', # set the facecolor to be #955196
+                            linewidth=1) # set the outline width to be 1 pt
+
+
+# ShapelyFeature creates a polygon, so for point data we can just use ax.plot()
+Reserves_handle = ax.plot(Reserves.geometry.x, Reserves.geometry.y, 's', color='0.5', ms=6, transform=ccrs.PlateCarree())
+
+# generate a list of handles for the SAC & SPA datasets
+# first, we add the list of names, then the list of colors, and finally we set the transparency
+# (since we set it in the map)
+SAC_handles = generate_handles(SAC.Name.unique(), SAC_colors, alpha=0.8)
+SPA_handles = generate_handles(SPA.Name.unique(), SPA_colors, alpha=0.8)
+
+# ax.legend() takes a list of handles and a list of labels corresponding to the objects
+# you want to add to the legend
+handles = SAC_handles + SPA_handles + Reserves_handle # use '+' to concatenate (combine) lists
+
+
+leg = ax.legend(handles, title='Legend', title_fontsize=12,
+                 fontsize=10, loc='upper left', frameon=True, framealpha=1)
+
+# add the text labels for the Nature Reserves
+for ind, row in Reserves.iterrows(): # Reserves.iterrows() returns the index and row
+    x, y = row.geometry.x, row.geometry.y # get the x,y location for each town
+    ax.text(x, y, row['NAME'].title(), fontsize=7, transform=ccrs.PlateCarree()) # use plt.text to place a label at x,y
+
+# add the scale bar to the axis
+scale_bar(ax)
+
+# save the figure as map.png, cropped to the axis (bbox_inches='tight'), and a dpi of 300
+fig.savefig('map.png', bbox_inches='tight', dpi=300)

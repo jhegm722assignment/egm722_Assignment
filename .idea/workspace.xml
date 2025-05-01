@@ -5,7 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="37fd720e-fd21-465d-9952-0ddecb0150cf" name="Changes" comment="Import of python modules.&#10;Define handles.&#10;Add spatial data.&#10;Create UTM29 crs.&#10;Creation of figure and axes.">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EGM722_Assignment_Part2.py" beforeDir="false" afterPath="$PROJECT_DIR$/EGM722_Assignment_Part2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_files/NI_outline.dbf" beforeDir="false" afterPath="$PROJECT_DIR$/data_files/NI_outline.dbf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_files/NI_outline.prj" beforeDir="false" afterPath="$PROJECT_DIR$/data_files/NI_outline.prj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_files/NI_outline.sbn" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_files/NI_outline.sbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_files/NI_outline.shp" beforeDir="false" afterPath="$PROJECT_DIR$/data_files/NI_outline.shp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_files/NI_outline.shp.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_files/NI_outline.shx" beforeDir="false" afterPath="$PROJECT_DIR$/data_files/NI_outline.shx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,14 +33,19 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "Python.EGM722_Assignment_Part2.executor": "Run",
+    "Python.EGM722_Assignment_Part2.executor": "Debug",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/hegar/anaconda3/envs/egm722_assignment/python.exe",
+    "last_opened_file_path": "C:/Users/hegar/egm722_Assignment/egm722_Assignment",
     "settings.editor.selected.configurable": "settings.sync"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\hegar\egm722_Assignment\egm722_Assignment" />
+    </key>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -57,7 +70,15 @@
       <option name="project" value="LOCAL" />
       <updated>1746111145853</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Import of python modules.&#10;Define handles.&#10;Add spatial data.&#10;Create UTM29 crs.&#10;Creation of figure and axes.">
+      <option name="closed" value="true" />
+      <created>1746111835421</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1746111835421</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
