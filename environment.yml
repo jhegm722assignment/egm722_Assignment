@@ -1,0 +1,12 @@
+name: egm722_assignment
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python
+  - geopandas
+  - cartopy>=0.21
+  - jupyterlab
+  - ipywidgets
+  - pyepsg
+  - folium
