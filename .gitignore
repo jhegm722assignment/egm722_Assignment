@@ -1,1 +1,51 @@
-egm722_Assignment/
+Here's a **simple `.gitignore`** file that's suitable for most Python projects:
+
+```gitignore
+# Byte-compiled / cache files
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Conda environment files
+*.env
+.env/
+*.yml
+
+# Virtual environments
+venv/
+env/
+.venv/
+.envrc
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# VSCode settings
+.vscode/
+
+# macOS files
+.DS_Store
+
+# PyCharm settings
+.idea/
+
+# Logs
+*.log
+
+# Test coverage
+htmlcov/
+.coverage
+.tox/
+
+# Build artifacts
+build/
+dist/
+*.egg-info/
+
+# Python wheel files
+*.whl
+```
+
+You can place this file in the **root directory** of your GitHub repository.
+
+Would you like a version tailored specifically for a project using Jupyter, Django, or something else?
