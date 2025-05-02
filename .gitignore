@@ -1,5 +1,3 @@
-Here's a **simple `.gitignore`** file that's suitable for most Python projects:
-
 ```gitignore
 # Byte-compiled / cache files
 __pycache__/
@@ -45,7 +43,3 @@ dist/
 # Python wheel files
 *.whl
 ```
-
-You can place this file in the **root directory** of your GitHub repository.
-
-Would you like a version tailored specifically for a project using Jupyter, Django, or something else?
