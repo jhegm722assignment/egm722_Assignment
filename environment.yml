@@ -7,6 +7,4 @@ dependencies:
   - geopandas
   - cartopy>=0.21
   - jupyterlab
-  - ipywidgets
-  - pyepsg
-  - folium
+  - matplotlib
